@@ -21,10 +21,14 @@ const App = () => {
 			date: new Date().toISOString(),
 			important: Math.random() < 0.5,
 		};
-		noteService.create(noteObject).then((returnedNote) => {
+		noteService.create(noteObject)
+		.then((returnedNote) => {
 			setNotes(notes.concat(returnedNote));
 			setNewNote('');
-		});
+		})
+		.catch(error => {
+			console.log(error.response.data.error);
+		})
 	};
 
 	const handleNoteChange = (event) => {
