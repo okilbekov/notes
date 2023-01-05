@@ -57,6 +57,7 @@ test('a valid note can be added', async () => {
     'a new valid note'
   )
 })
+
 test('a note can be deleted', async () => {
   const notesAtStart = await helper.notesInDb()
   const noteToDelete = notesAtStart[0]
